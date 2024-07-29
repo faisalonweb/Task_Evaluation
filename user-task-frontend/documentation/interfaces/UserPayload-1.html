@@ -1,0 +1,610 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>user-task-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">user-task-frontend documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  UserPayload</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/components/shared/UserModal.tsx</code>
+        </p>
+
+
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#actions" 
+>
+                                            actions
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#email" 
+>
+                                            email
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#firstName" 
+>
+                                            firstName
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#lastName" 
+>
+                                            lastName
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="actions"></a>
+                                        <span class="name "><b>actions</b>
+                                            <a href="#actions">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>actions:     <code>literal type</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>literal type</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="email"></a>
+                                        <span class="name "><b>email</b>
+                                            <a href="#email">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>email:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="firstName"></a>
+                                        <span class="name "><b>firstName</b>
+                                            <a href="#firstName">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>firstName:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="lastName"></a>
+                                        <span class="name "><b>lastName</b>
+                                            <a href="#lastName">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>lastName:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import React, { useState, useEffect } from &quot;react&quot;;
+import Button from &quot;./Button&quot;;
+import { useUserById } from &quot;../hooks/api-hooks&quot;;
+
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () &#x3D;&gt; void;
+  action: string;
+  onSubmit: (payload: UserPayload) &#x3D;&gt; void;
+  userId?: string;
+}
+
+interface UserPayload {
+  firstName: string;
+  lastName: string;
+  email: string;
+  actions: {
+    create: boolean;
+    delete: boolean;
+    view: boolean;
+    move: boolean;
+  };
+}
+
+const UserModal: React.FC&lt;ModalProps&gt; &#x3D; ({
+  isOpen,
+  onClose,
+  action,
+  onSubmit,
+  userId,
+}) &#x3D;&gt; {
+  const { data: user, isLoading, error } &#x3D; useUserById(userId as string);
+  const [firstName, setFirstName] &#x3D; useState(&quot;&quot;);
+  const [lastName, setLastName] &#x3D; useState(&quot;&quot;);
+  const [email, setEmail] &#x3D; useState(&quot;&quot;);
+  const [actions, setActions] &#x3D; useState({
+    create: false,
+    delete: false,
+    view: false,
+    move: false,
+  });
+
+  useEffect(() &#x3D;&gt; {
+    if (user) {
+      setFirstName(user.firstName || &quot;&quot;);
+      setLastName(user.lastName || &quot;&quot;);
+      setEmail(user.email || &quot;&quot;);
+      setActions({
+        create: user.actions.create || false,
+        delete: user.actions.delete || false,
+        view: user.actions.view || false,
+        move: user.actions.move || false,
+      });
+    }
+  }, [user]);
+
+  if (!isOpen) return null;
+
+  const handleSubmit &#x3D; (e: React.FormEvent) &#x3D;&gt; {
+    e.preventDefault();
+    const payload: UserPayload &#x3D; {
+      firstName,
+      lastName,
+      email,
+      actions,
+    };
+    onSubmit(payload);
+    // Reset form fields after submission
+    setFirstName(&quot;&quot;);
+    setLastName(&quot;&quot;);
+    setEmail(&quot;&quot;);
+    setActions({ create: false, delete: false, view: false, move: false });
+  };
+
+  const handleCheckboxChange &#x3D; (actionName: keyof typeof actions) &#x3D;&gt; {
+    setActions((prev) &#x3D;&gt; ({ ...prev, [actionName]: !prev[actionName] }));
+  };
+
+  return (
+    &lt;div className&#x3D;&quot;fixed inset-0 z-50 overflow-y-auto overflow-x-hidden flex justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-black bg-opacity-50&quot;&gt;
+      &lt;div className&#x3D;&quot;relative p-4 w-full max-w-md max-h-full&quot;&gt;
+        &lt;div className&#x3D;&quot;relative bg-white rounded-lg shadow dark:bg-gray-700&quot;&gt;
+          &lt;div className&#x3D;&quot;flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600&quot;&gt;
+            &lt;h3 className&#x3D;&quot;text-xl font-semibold text-gray-900 dark:text-white&quot;&gt;
+              {action &#x3D;&#x3D;&#x3D; &quot;add&quot; ? &quot;Create User&quot; : &quot;Edit User&quot;}
+            &lt;/h3&gt;
+            &lt;button
+              type&#x3D;&quot;button&quot;
+              className&#x3D;&quot;end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white&quot;
+              onClick&#x3D;{onClose}
+            &gt;
+              &lt;svg
+                className&#x3D;&quot;w-3 h-3&quot;
+                aria-hidden&#x3D;&quot;true&quot;
+                xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+                fill&#x3D;&quot;none&quot;
+                viewBox&#x3D;&quot;0 0 14 14&quot;
+              &gt;
+                &lt;path
+                  stroke&#x3D;&quot;currentColor&quot;
+                  strokeLinecap&#x3D;&quot;round&quot;
+                  strokeLinejoin&#x3D;&quot;round&quot;
+                  strokeWidth&#x3D;&quot;2&quot;
+                  d&#x3D;&quot;m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6&quot;
+                /&gt;
+              &lt;/svg&gt;
+              &lt;span className&#x3D;&quot;sr-only&quot;&gt;Close modal&lt;/span&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+          &lt;div className&#x3D;&quot;p-4 md:p-5&quot;&gt;
+            &lt;form className&#x3D;&quot;space-y-4&quot; onSubmit&#x3D;{handleSubmit}&gt;
+              &lt;div&gt;
+                &lt;label
+                  htmlFor&#x3D;&quot;firstName&quot;
+                  className&#x3D;&quot;block mb-2 text-sm font-medium text-gray-900 dark:text-white&quot;
+                &gt;
+                  Your First Name
+                &lt;/label&gt;
+                &lt;input
+                  type&#x3D;&quot;text&quot;
+                  name&#x3D;&quot;firstName&quot;
+                  id&#x3D;&quot;firstName&quot;
+                  value&#x3D;{firstName}
+                  onChange&#x3D;{(e) &#x3D;&gt; setFirstName(e.target.value)}
+                  className&#x3D;&quot;bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white&quot;
+                  placeholder&#x3D;&quot;First Name&quot;
+                  required
+                /&gt;
+              &lt;/div&gt;
+              &lt;div&gt;
+                &lt;label
+                  htmlFor&#x3D;&quot;lastName&quot;
+                  className&#x3D;&quot;block mb-2 text-sm font-medium text-gray-900 dark:text-white&quot;
+                &gt;
+                  Your Last Name
+                &lt;/label&gt;
+                &lt;input
+                  type&#x3D;&quot;text&quot;
+                  name&#x3D;&quot;lastName&quot;
+                  id&#x3D;&quot;lastName&quot;
+                  value&#x3D;{lastName}
+                  onChange&#x3D;{(e) &#x3D;&gt; setLastName(e.target.value)}
+                  className&#x3D;&quot;bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white&quot;
+                  placeholder&#x3D;&quot;Last Name&quot;
+                  required
+                /&gt;
+              &lt;/div&gt;
+              &lt;div&gt;
+                &lt;label
+                  htmlFor&#x3D;&quot;email&quot;
+                  className&#x3D;&quot;block mb-2 text-sm font-medium text-gray-900 dark:text-white&quot;
+                &gt;
+                  Your Email
+                &lt;/label&gt;
+                &lt;input
+                  type&#x3D;&quot;email&quot;
+                  name&#x3D;&quot;email&quot;
+                  id&#x3D;&quot;email&quot;
+                  value&#x3D;{email}
+                  onChange&#x3D;{(e) &#x3D;&gt; setEmail(e.target.value)}
+                  className&#x3D;&quot;bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white&quot;
+                  placeholder&#x3D;&quot;name@company.com&quot;
+                  required
+                /&gt;
+              &lt;/div&gt;
+
+              {Object.entries(actions).map(([key, value]) &#x3D;&gt; (
+                &lt;div key&#x3D;{key} className&#x3D;&quot;flex items-center mb-4&quot;&gt;
+                  &lt;input
+                    id&#x3D;{&#x60;checkbox-${key}&#x60;}
+                    type&#x3D;&quot;checkbox&quot;
+                    checked&#x3D;{value}
+                    onChange&#x3D;{() &#x3D;&gt;
+                      handleCheckboxChange(key as keyof typeof actions)
+                    }
+                    className&#x3D;&quot;w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600&quot;
+                  /&gt;
+                  &lt;label
+                    htmlFor&#x3D;{&#x60;checkbox-${key}&#x60;}
+                    className&#x3D;&quot;ms-2 text-sm font-medium text-gray-900 dark:text-gray-300&quot;
+                  &gt;
+                    {key.charAt(0).toUpperCase() + key.slice(1)} item
+                  &lt;/label&gt;
+                &lt;/div&gt;
+              ))}
+
+              &lt;div className&#x3D;&quot;flex justify-end&quot;&gt;
+                &lt;Button
+                  height&#x3D;&quot;py-2.5&quot;
+                  width&#x3D;&quot;px-5&quot;
+                  color&#x3D;&quot;text-gray-900 bg-white border border-gray-300 &quot;
+                  text&#x3D;&quot;Cancel&quot;
+                  textColor&#x3D;&quot;text-gray-900&quot;
+                  onClick&#x3D;{onClose}
+                  type&#x3D;&quot;button&quot;
+                /&gt;
+                &lt;Button
+                  height&#x3D;&quot;py-2.5&quot;
+                  width&#x3D;&quot;px-5&quot;
+                  color&#x3D;&quot;bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 &quot;
+                  text&#x3D;{action &#x3D;&#x3D;&#x3D; &quot;add&quot; ? &quot;Create&quot; : &quot;Edit&quot;}
+                  type&#x3D;&quot;submit&quot;
+                /&gt;
+              &lt;/div&gt;
+            &lt;/form&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default UserModal;
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserPayload-1.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
