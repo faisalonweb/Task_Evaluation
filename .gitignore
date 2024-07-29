@@ -1,0 +1,4 @@
+user-task-backend/node_modules
+user-task-frontend/node_modules
+./user-task-frontend/node_modules
+./user-task-backend/node_modules
