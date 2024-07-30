@@ -52,7 +52,7 @@ const UsersTable = () => {
             <th scope="col" className="px-6 py-3">
               EMAIL
             </th>
-            <th scope="col" className="px-6 py-3 flex justify-around">
+            <th scope="col" className="flex justify-end px-6 py-3 mr-28">
               Actions
             </th>
           </tr>
@@ -93,7 +93,7 @@ const UsersTable = () => {
                     width="px-4"
                     onClick={() => {
                       setUserId(user?.id);
-                      setIsModalActionOpen(true)
+                      setIsModalActionOpen(true);
                     }}
                   />
                 </td>
